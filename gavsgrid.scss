@@ -1,0 +1,87 @@
+/*
+Project Name: Gav's Grid
+Project URL: https://www.gavsblog.com
+Project Author: Gav de Ste Croix
+Code Type: SCSS
+License: MIT
+ */
+
+// Grid Variables
+$col-number: 12;
+$col-span: 100%;
+$col-gutter: 4%;
+$col-vertical-gutter: 50px;
+
+// Syntax
+$column: 'col';
+$row: 'row';
+$small: 'sml';
+$medium: 'med';
+$large: 'lrg';
+
+// Breakpoints (bp)
+$bp-small: 0;
+$bp-medium: 720px;
+$bp-large: 1024px;
+
+// Grid
+@mixin gavsgrid($breakpoint, $columns, $span, $gutter) {
+	@for $i from 1 through $columns {
+		@if $i == $columns {
+			.#{$breakpoint}-#{$i}, > .#{$column}:not([class*=#{$breakpoint}]) { width: $span - $gutter; }
+		} @else {
+			.#{$breakpoint}-#{$i} { width: ($span / ($columns / $i)) - $gutter; }
+		}
+	}
+}
+
+// CSS
+html, body {
+	margin: 0;
+	padding: 0;
+	left: 0;
+	top: 0;
+	font-size: 100%;
+}
+
+main, .main {
+	display: block;
+	width: 100%;
+}
+
+.#{$row} {
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 95%;
+
+	&:after {
+	content: "";
+	display: block;
+	clear: both;
+	}
+
+	// Column settings
+	.#{$column} {
+		float: left;
+		margin: ($col-vertical-gutter / 2) ($col-gutter / 2);
+		min-height: 10px;
+		box-sizing: border-box;
+	} 
+
+	// Between small breakpoint and medium break point
+	@media only screen and (min-width: $bp-small) and (max-width: $bp-medium) {
+		@include gavsgrid($small, $col-number, $col-span, $col-gutter);
+	}
+
+	// Between medium breakpoint and large break point
+	@media only screen and (min-width: ($bp-medium + 1)) and (max-width: $bp-large) {
+		@include gavsgrid($medium, $col-number, $col-span, $col-gutter);
+	}
+
+	// Large and up
+	@media only screen and (min-width: ($bp-large + 1)) {
+		@include gavsgrid($large, $col-number, $col-span, $col-gutter);
+	}   
+}

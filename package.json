@@ -1,0 +1,14 @@
+{
+	"name": "gavsgrid",
+	"version": "1.0.0",
+	"description": "Gavsgrid project",
+	"main": "gavsgrid.scss",
+	"scripts": {
+		"scss": "node-sass --watch gavsgrid.scss -o css"
+	},
+	"author": "Gav de Ste Croix",
+	"license": "ISC",
+	"devDependencies": {
+		"sass": "^1.22.7"
+	}
+}

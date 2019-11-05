@@ -1,0 +1,108 @@
+/*
+Project Name: Gav's Grid
+Project URL: https://www.gavsblog.com
+Project Author: Gav de Ste Croix
+Code Type: SCSS
+License: MIT
+ */
+html, body {
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
+  font-size: 100%; }
+
+main, .main {
+  display: block;
+  width: 100%; }
+
+.row {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%; }
+  .row:after {
+    content: "";
+    display: block;
+    clear: both; }
+  .row .col {
+    float: left;
+    margin: 25px 2%;
+    min-height: 10px;
+    box-sizing: border-box; }
+  @media only screen and (min-width: 0) and (max-width: 720px) {
+    .row .sml-1 {
+      width: 4.33333%; }
+    .row .sml-2 {
+      width: 12.66667%; }
+    .row .sml-3 {
+      width: 21%; }
+    .row .sml-4 {
+      width: 29.33333%; }
+    .row .sml-5 {
+      width: 37.66667%; }
+    .row .sml-6 {
+      width: 46%; }
+    .row .sml-7 {
+      width: 54.33333%; }
+    .row .sml-8 {
+      width: 62.66667%; }
+    .row .sml-9 {
+      width: 71%; }
+    .row .sml-10 {
+      width: 79.33333%; }
+    .row .sml-11 {
+      width: 87.66667%; }
+    .row .sml-12, .row > .col:not([class*=sml]) {
+      width: 96%; } }
+  @media only screen and (min-width: 721px) and (max-width: 1024px) {
+    .row .med-1 {
+      width: 4.33333%; }
+    .row .med-2 {
+      width: 12.66667%; }
+    .row .med-3 {
+      width: 21%; }
+    .row .med-4 {
+      width: 29.33333%; }
+    .row .med-5 {
+      width: 37.66667%; }
+    .row .med-6 {
+      width: 46%; }
+    .row .med-7 {
+      width: 54.33333%; }
+    .row .med-8 {
+      width: 62.66667%; }
+    .row .med-9 {
+      width: 71%; }
+    .row .med-10 {
+      width: 79.33333%; }
+    .row .med-11 {
+      width: 87.66667%; }
+    .row .med-12, .row > .col:not([class*=med]) {
+      width: 96%; } }
+  @media only screen and (min-width: 1025px) {
+    .row .lrg-1 {
+      width: 4.33333%; }
+    .row .lrg-2 {
+      width: 12.66667%; }
+    .row .lrg-3 {
+      width: 21%; }
+    .row .lrg-4 {
+      width: 29.33333%; }
+    .row .lrg-5 {
+      width: 37.66667%; }
+    .row .lrg-6 {
+      width: 46%; }
+    .row .lrg-7 {
+      width: 54.33333%; }
+    .row .lrg-8 {
+      width: 62.66667%; }
+    .row .lrg-9 {
+      width: 71%; }
+    .row .lrg-10 {
+      width: 79.33333%; }
+    .row .lrg-11 {
+      width: 87.66667%; }
+    .row .lrg-12, .row > .col:not([class*=lrg]) {
+      width: 96%; } }
